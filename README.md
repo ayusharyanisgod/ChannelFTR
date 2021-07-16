@@ -1,4 +1,4 @@
-# ChannelFTR
+# Forward Tag Remover
 
 **A bot which can remove forward tag from messages that you forwarded to ➡ channel**
 
@@ -6,18 +6,11 @@
 
 ## Sample bot
 
-- **Sample bot can be found on telegram as [@ChannelFTRBot](https://t.me/ChannelFTRBot)**
+- **Sample bot can be found on telegram as [@ForwardTag_Remover_Bot](http://t.me/ForwardTag_Remover_Bot)**
 
-## Support
- 
-- **Join [Support Group](https://t.me/BotzCityChat) For Any Help...!**
-
-## Updates
-
-- **To get lastest updates on 🔛 New Bot join [this channel](t.me/BotzCity)**
 
 ## Credits
 
-- **[Me](https://t.me/Alain_xD)**
+- **[Alain](https://t.me/Alain_xD)**
 - **[InukaAsith](https://t.me/InukaAsith)** 
 - **[Pyrogram](https://docs.pyrogram.org)**
