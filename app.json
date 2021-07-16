@@ -17,11 +17,11 @@
             "value": ""
         },
         "API_HASH": {
-            "description": "Your API Hash from my.telegram.org",
+            "description": "Take API Hash from my.telegram.org",
             "value": ""
         },
         "APP_ID": {
-            "description": "Your API ID from my.telegram.org",
+            "description": "Take API ID from my.telegram.org",
             "value": ""
         }
     },
