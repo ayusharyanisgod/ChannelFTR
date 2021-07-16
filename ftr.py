@@ -8,7 +8,6 @@
 import re, os, random, asyncio, html
 os.system("pip install pyrogram")
 import pyrogram
-from pyrogram.errors import RPCError
 from pyrogram import filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 
@@ -18,17 +17,16 @@ BOT_TOKEN = os.environ.get("BOT_TOKEN")
 
 app = pyrogram.Client("app", api_id=APP_ID, api_hash=API_HASH, bot_token=BOT_TOKEN)
 
-but = InlineKeyboardMarkup([[InlineKeyboardButton("Help 🤔", callback_data="Help"), InlineKeyboardButton("Close 🔐", callback_data="close")],[InlineKeyboardButton("Updates ⬆", url="t.me/BotzCity"), InlineKeyboardButton("Developer 💕", url="t.me/Alain_xD")]])
-butt = InlineKeyboardMarkup([[InlineKeyboardButton("Home 🏠", callback_data="home"), InlineKeyboardButton("Updates ⬆", url="t.me/BotzCity")], [InlineKeyboardButton("Repo 👉", url="GitHub.com/BotzCity/ChannelFTR"), InlineKeyboardButton("Close 🔐", callback_data="close")]])
-
+but = InlineKeyboardMarkup([[InlineKeyboardButton("Help 🤔", callback_data="Help"), InlineKeyboardButton("Close 🔐", callback_data="close")],[InlineKeyboardButton("Updates Channel ⬆", url="t.me/PremiumValleyUpdates"), InlineKeyboardButton("Support Group 🆘", url="t.me/PremiumValleySupport")]])
+butt = InlineKeyboardMarkup([[InlineKeyboardButton("Home 🏠", callback_data="home"), InlineKeyboardButton("Updates Channel ⬆", url="t.me/PremiumValleyUpdates")], [InlineKeyboardButton("Support Group 🆘", url="t.me/PremiumValleySupport"), InlineKeyboardButton("Close 🔐", callback_data="close")]])
 
 @app.on_message(filters.command(["start"]))
 async def start(lel, message):
-    await message.reply_text(f"**Hi** `{message.from_user.first_name}` **!\n\nI'm Channel forward tag remover! I can send the file // messages which is forwarded in your channel without forward tag.🤩..!**", reply_markup=but)
+    await message.reply_text(f"**Hi** `{message.from_user.first_name}` **!\n\nI'm forward tag remover Bot! I can send the file // messages which is forwarded in your channel without forward tag in the Same Channel.🤩..!**", reply_markup=but)
 
 @app.on_message(filters.command(["help"]))
 async def help(ha, message):
-    await app.send_message(message.chat.id, """**There is nothing no more..!\nJust add me to your channel give rights to delete message and post messages and whichever forwarded message received I will send again without forward tag.\n\nMade with ❤️ by @BotzCity**""", reply_markup=butt) 
+    await app.send_message(message.chat.id, """**There is nothing no more..!\nJust add me to your channel give rights to delete message and post messages and whichever forwarded message received I will send again without forward tag.**""", reply_markup=butt) 
 
 @app.on_callback_query()
 async def button(app, update):
@@ -45,15 +43,13 @@ async def button(app, update):
 @app.on_message(filters.channel & filters.forwarded)
 async def copy(sed, message):
     try:
-       
        sed = await message.copy(message.chat.id)
-       
        await message.delete()
-    except RPCError as lel:
+    except RCPError as lel:
        await message.reply(lel)
        return
 
 
 print("Started bot...! ") 
-print("Join @BotzCity for any help !")
+
 app.run()
